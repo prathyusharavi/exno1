@@ -29,16 +29,19 @@ import numpy as np
 df=pd.read_csv("SAMPLEIDS.csv")
 df
  # Output:
-image
+![image](https://github.com/user-attachments/assets/080cac79-16d0-4b68-9cbd-263387a95cbf)
 
 Initializing id=column
 id=df['M4']
 id
  # Output:
-image
+![image](https://github.com/user-attachments/assets/12bae2c1-cdc4-42e0-82a0-1e5f25d6ef07)
 
 sns graphs:
-image image image
+![image](https://github.com/user-attachments/assets/83357ba8-18fb-47e9-b8ce-83f908485c5e)
+![image](https://github.com/user-attachments/assets/7e249fed-5258-429c-a736-97e1ef9e8660)
+![image](https://github.com/user-attachments/assets/24a57362-0894-418c-8c0c-ffb635d81449)
+
 
 Quantile and IQR:
 q1=id.quantile(0.25)
@@ -47,14 +50,15 @@ q3=id.quantile(0.75)
 iqr=q3-q1
 iqr
 # Output:
-image
+![image](https://github.com/user-attachments/assets/4278fa52-3c0f-4180-b9cb-866c3f064806)
 
 Declaring bounds:
 lower_bound=q1-1.5*iqr
 upper_bound=q3+1.5*iqr
 lower_bound,upper_bound
  # Output:
-image
+![image](https://github.com/user-attachments/assets/a366c583-19e3-4ea8-96df-86ba6d05fa20)
+
 
 Outliers:
 outliers=[x for x in id if x<lower_bound or x>upper_bound]
@@ -66,7 +70,8 @@ Dropna function to remove any null values:
 id.dropna()
 
  # Output:
-image
+![image](https://github.com/user-attachments/assets/362833e2-71ec-4f70-86d0-583968e8484b)
+
 
 Printing all requird values:
 print("Q1:",q1)
@@ -77,13 +82,14 @@ print("lower_bound:",lower_bound)
 print("upper_bound:",upper_bound)
 print("Outliers",outliers)
 Output:
-image
+![image](https://github.com/user-attachments/assets/9209edce-0f87-4edc-8a38-f784b09ac249)
+
 
 Checking for any outliers at the end:
 sns.boxplot(id)
 
  # Output:
-image
+![image](https://github.com/user-attachments/assets/e4c8be4c-abff-499b-ae39-7c04aed632c3)
 
 Calculating Z_score:
 import scipy.stats as stats
@@ -101,7 +107,8 @@ print(df)
 z = np.abs(stats.zscore(df['M4']))
 z
  # Output:
-image
+![image](https://github.com/user-attachments/assets/4ce4972f-abba-40c3-b096-05ca8d7c59d0)
+
 
 # Result:
 Thus we have cleaned the data and removed the outliers by detection using IQR and Z-score method.
