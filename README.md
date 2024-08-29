@@ -58,13 +58,12 @@ upper_bound=q3+1.5*iqr
 lower_bound,upper_bound
  # Output:
 ![image](https://github.com/user-attachments/assets/a366c583-19e3-4ea8-96df-86ba6d05fa20)
-
-
 Outliers:
 outliers=[x for x in id if x<lower_bound or x>upper_bound]
 print("Outliers:",outliers)
 Output:
-image
+![image](https://github.com/user-attachments/assets/32ded36a-73a2-4871-8cb2-22dca3c4ffef)
+
 
 Dropna function to remove any null values:
 id.dropna()
